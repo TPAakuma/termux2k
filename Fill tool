@@ -1,0 +1,29 @@
+import random
+import time
+
+def lac_xuc_xac():
+    return random.randint(1, 6)
+
+def tinh_tai_xiu(tong):
+    if 4 <= tong <= 10:
+        return "XỈU"
+    elif 11 <= tong <= 17:
+        return "TÀI"
+    else:
+        return "BỘ BA (KHÔNG TÍNH)"
+
+def choi_tai_xiu():
+    print("=== GAME TÀI XỈU ===")
+    while True:
+        input("Nhấn Enter để lắc xí ngầu...")
+        x1 = lac_xuc_xac()
+        x2 = lac_xuc_xac()
+        x3 = lac_xuc_xac()
+        tong = x1 + x2 + x3
+
+        print(f"Kết quả: {x1}, {x2}, {x3} => Tổng: {tong}")
+        print(f"Kết luận: {tinh_tai_xiu(tong)}")
+        
+        tiep_tuc = input("Chơi tiếp? (y/n): ").lower()
+        if tiep_tuc != 'y':
+            break
